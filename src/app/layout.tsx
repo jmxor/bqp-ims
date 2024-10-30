@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Header from '@/components/header';
+import SidebarContextProvider from '@/context/sidebar';
 
 export const metadata: Metadata = {
   title: 'BQP - IMS',
@@ -15,10 +16,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        <div className="flex flex-col items-center">
-          <div className="w-full 2xl:container">{children}</div>
-        </div>
+        <SidebarContextProvider>
+          <Header />
+          <div className="flex justify-center">
+            <div className="w-full 2xl:container">{children}</div>
+          </div>
+        </SidebarContextProvider>
       </body>
     </html>
   );
