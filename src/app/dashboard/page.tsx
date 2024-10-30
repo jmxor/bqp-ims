@@ -1,7 +1,11 @@
+import Breadcrumbs from '@/components/breadcrumbs';
+
 export default function DashboardPage() {
   return (
     <main className="px-4 py-3">
-      <h1>Dashboard Page</h1>
+      <Breadcrumbs
+        breadcrumbs={[{ label: 'Dashboard', href: '/dashboard', active: true }]}
+      />
     </main>
   );
 }
